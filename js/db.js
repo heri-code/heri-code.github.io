@@ -11,7 +11,7 @@ var dbPromised = idb.open("Bola", 1, function(upgradeDb) {
         var tx = db.transaction("tim", "readwrite");
         var store = tx.objectStore("tim");
         console.log(data);
-        store.add(data);
+        store.put(data);
         return tx.complete;
       })
       .then(function() {
